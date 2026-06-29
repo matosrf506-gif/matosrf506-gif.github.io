@@ -127,6 +127,72 @@ layout: default
   </article>
 
   <aside class="sidebar">
+    <!-- CTA card: product intro above recommended -->
+    <div class="sidebar__section sidebar__cta">
+      <div class="cta-brand">
+        <img class="cta-brand__logo" src="{{ '/assets/images/nasavpn-logo.png' | relative_url }}" alt="NasaVPN" width="38" height="38">
+        <span class="cta-brand__name">NasaVPN</span>
+      </div>
+      <p class="cta-tagline">
+        {% case lang %}
+          {% when 'en' %}Cross-border · Native Residential IP · Global Clean Nodes
+          {% when 'vi' %}Xuyên biên giới · IP Dân cư Gốc · Node Toàn cầu Sạch
+          {% when 'ja' %}越境専用 · ネイティブ住宅IP · 全球クリーンノード
+          {% when 'ko' %}크로스보더 전용 · 네이티브 주거용 IP · 글로벌 클린 노드
+          {% when 'tr' %}Sınır Ötesi · Yerel Konut IP · Global Temiz Node
+          {% else %}跨境专用 · 原生住宅 IP · 全球纯净节点
+        {% endcase %}
+      </p>
+      <ul class="cta-features">
+        {% case lang %}
+          {% when 'en' %}
+            <li>Native residential IP, exclusively yours</li>
+            <li>38ms low-latency global clean nodes</li>
+            <li>E-commerce · AI tools · Streaming</li>
+          {% when 'vi' %}
+            <li>IP dân cư gốc độc quyền, chỉ của bạn</li>
+            <li>Node toàn cầu sạch 38ms độ trễ thấp</li>
+            <li>Thương mại · AI · Streaming</li>
+          {% when 'ja' %}
+            <li>ネイティブ住宅IP・独占使用</li>
+            <li>38ms低遅延・全球クリーンノード</li>
+            <li>越境EC · AIツール · ストリーミング</li>
+          {% when 'ko' %}
+            <li>전용 네이티브 주거용 IP</li>
+            <li>38ms 저지연 글로벌 클린 노드</li>
+            <li>해외직구 · AI 도구 · 스트리밍</li>
+          {% when 'tr' %}
+            <li>Münhasır yerel konut IP'si</li>
+            <li>38ms düşük gecikmeli global node</li>
+            <li>E-ticaret · AI araçları · Streaming</li>
+          {% else %}
+            <li>独享固定原生住宅 IP</li>
+            <li>全球纯净节点 38ms 低延迟</li>
+            <li>跨境电商 · AI 工具 · 流媒体</li>
+        {% endcase %}
+      </ul>
+      <a class="btn btn--primary sidebar__cta-btn" href="https://www.nasavpn.com/{% if lang != 'zh' %}{{ lang }}/{% else %}zh/{% endif %}">
+        {% case lang %}
+          {% when 'en' %}Get Started Free →
+          {% when 'vi' %}Bắt đầu miễn phí →
+          {% when 'ja' %}無料で始める →
+          {% when 'ko' %}무료로 시작하기 →
+          {% when 'tr' %}Ücretsiz Başla →
+          {% else %}免费开始使用 →
+        {% endcase %}
+      </a>
+      <p class="cta-note">
+        {% case lang %}
+          {% when 'en' %}Stable cross-border access · Dedicated fixed IP
+          {% when 'vi' %}Kết nối xuyên biên giới ổn định · IP cố định riêng
+          {% when 'ja' %}越境業務を安定直結 · 固定専有IP
+          {% when 'ko' %}안정적인 크로스보더 연결 · 고정 전용 IP
+          {% when 'tr' %}Kararlı sınır ötesi erişim · Sabit özel IP
+          {% else %}出海业务稳稳直连 · 独享固定 IP
+        {% endcase %}
+      </p>
+    </div>
+
     <div class="sidebar__section">
       <h3 class="sidebar__title">
         {% case lang %}
@@ -157,39 +223,6 @@ layout: default
           {% endif %}
         {% endfor %}
       </ul>
-    </div>
-
-    <div class="sidebar__section sidebar__cta">
-      <h3 class="sidebar__title">
-        {% case lang %}
-          {% when 'en' %}Try NasaVPN Free
-          {% when 'vi' %}Dùng thử miễn phí
-          {% when 'ja' %}無料で試す
-          {% when 'ko' %}무료 체험
-          {% when 'tr' %}Ücretsiz Deneyin
-          {% else %}免费试用 NasaVPN
-        {% endcase %}
-      </h3>
-      <p class="sidebar__cta-text">
-        {% case lang %}
-          {% when 'en' %}Dedicated IP · Private node · 99.9% uptime guarantee.
-          {% when 'vi' %}IP riêng · Node riêng tư · Cam kết uptime 99.9%.
-          {% when 'ja' %}専用IP · プライベートノード · 稼働率99.9%保証。
-          {% when 'ko' %}전용 IP · 프라이빗 노드 · 99.9% 가동률 보장.
-          {% when 'tr' %}Özel IP · Özel node · %99.9 uptime garantisi.
-          {% else %}专属 IP · 私有节点 · 99.9% 稳定在线保障。
-        {% endcase %}
-      </p>
-      <a class="btn btn--primary sidebar__cta-btn" href="https://www.nasavpn.com/{% if lang != 'zh' %}{{ lang }}/{% else %}zh/{% endif %}">
-        {% case lang %}
-          {% when 'en' %}Get Started Free →
-          {% when 'vi' %}Bắt đầu miễn phí →
-          {% when 'ja' %}無料で始める →
-          {% when 'ko' %}무료로 시작하기 →
-          {% when 'tr' %}Ücretsiz Başla →
-          {% else %}免费开始使用 →
-        {% endcase %}
-      </a>
     </div>
   </aside>
 </div>
