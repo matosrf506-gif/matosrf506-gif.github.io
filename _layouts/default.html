@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% assign lang = page.lang | default: 'zh' %}
+{% if lang == 'ja' %}{% assign html_lang = 'ja' %}
+{% elsif lang == 'ko' %}{% assign html_lang = 'ko' %}
+{% elsif lang == 'vi' %}{% assign html_lang = 'vi' %}
+{% elsif lang == 'tr' %}{% assign html_lang = 'tr' %}
+{% elsif lang == 'en' %}{% assign html_lang = 'en' %}
+{% else %}{% assign html_lang = 'zh-CN' %}{% endif %}
+<html lang="{{ html_lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/images/nasavpn-logo.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% feed_meta %}
+  {% seo %}
+  {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="zh" href="https://matosrf506-gif.github.io/" />
+  <link rel="alternate" hreflang="en" href="https://matosrf506-gif.github.io/en/" />
+  <link rel="alternate" hreflang="vi" href="https://matosrf506-gif.github.io/vi/" />
+  <link rel="alternate" hreflang="ja" href="https://matosrf506-gif.github.io/ja/" />
+  <link rel="alternate" hreflang="ko" href="https://matosrf506-gif.github.io/ko/" />
+  <link rel="alternate" hreflang="tr" href="https://matosrf506-gif.github.io/tr/" />
+  <link rel="alternate" hreflang="x-default" href="https://matosrf506-gif.github.io/en/" />
+
+  <!-- JSON-LD -->
+  {% if page.layout == 'post' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ page.title | jsonify }},
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    {% if page.image %}"image": "https://matosrf506-gif.github.io{{ page.image }}",{% endif %}
+    "author": { "@type": "Organization", "name": "NasaVPN" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NasaVPN",
+      "logo": { "@type": "ImageObject", "url": "https://matosrf506-gif.github.io/assets/images/nasavpn-logo.png" }
+    },
+    "description": {{ page.description | default: page.excerpt | strip_html | truncate: 160 | jsonify }},
+    "mainEntityOfPage": "https://matosrf506-gif.github.io{{ page.url }}"
+  }
+  </script>
+  {% elsif page.layout == 'home' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NasaVPN",
+    "url": "https://www.nasavpn.com",
+    "logo": "https://matosrf506-gif.github.io/assets/images/nasavpn-logo.png",
+    "sameAs": ["https://matosrf506-gif.github.io"]
+  }
+  </script>
+  {% endif %}
+
+  <script src="{{ '/assets/js/lazy-load.js' | relative_url }}" defer></script>
+  <style>@media(prefers-color-scheme:dark){:root{--bg:#0c1425;--fg:#c7d2e6;--muted:#92a0bb;--heading:#eaf0fb;--accent:#6b9fff;--accent-2:#4fd6ac;--card:#152035;--border:#1e2e4a;--header-bg:rgba(10,18,38,.9);--code-bg:#152035;--shadow:0 10px 30px rgba(0,0,0,.35)}}</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      {% if lang == 'zh' or lang == nil %}{% assign brand_home = '/' %}
+      {% else %}{% assign brand_home = lang | prepend: '/' | append: '/' %}{% endif %}
+      <a class="brand" href="{{ brand_home | relative_url }}">
+        <img class="brand__logo" src="{{ '/assets/images/nasavpn-logo.svg' | relative_url }}" alt="NasaVPN" width="34" height="34">
+        <span class="brand__name">NasaVPN</span>
+      </a>
+      <div class="site-nav-wrap">
+        <nav class="site-nav">
+          {% assign nav_items = site.data.navigation[lang] | default: site.data.navigation.zh %}
+          {% for item in nav_items %}
+            <a href="{{ item.url }}"{% if item.url contains '://' %} target="_blank" rel="noopener"{% endif %}>{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+        <div class="lang-switch">
+          <div class="lang-dropdown">
+            <button class="lang-dropdown__btn" aria-label="Switch language">
+              {% case lang %}
+                {% when 'en' %}<img src="https://flagcdn.com/20x15/us.png" width="20" height="15" alt="US" class="flag-icon"> English
+                {% when 'vi' %}<img src="https://flagcdn.com/20x15/vn.png" width="20" height="15" alt="VN" class="flag-icon"> Tiếng Việt
+                {% when 'ja' %}<img src="https://flagcdn.com/20x15/jp.png" width="20" height="15" alt="JP" class="flag-icon"> 日本語
+                {% when 'ko' %}<img src="https://flagcdn.com/20x15/kr.png" width="20" height="15" alt="KR" class="flag-icon"> 한국어
+                {% when 'tr' %}<img src="https://flagcdn.com/20x15/tr.png" width="20" height="15" alt="TR" class="flag-icon"> Türkçe
+                {% else %}<img src="https://flagcdn.com/20x15/cn.png" width="20" height="15" alt="CN" class="flag-icon"> 中文
+              {% endcase %}
+              <span class="lang-dropdown__arrow">▾</span>
+            </button>
+            <ul class="lang-dropdown__menu">
+              <li><a href="/" {% if lang == 'zh' %}class="active"{% endif %}><img src="https://flagcdn.com/20x15/cn.png" width="20" height="15" alt="CN" class="flag-icon"> 中文</a></li>
+              <li><a href="/en/" {% if lang == 'en' %}class="active"{% endif %}><img src="https://flagcdn.com/20x15/us.png" width="20" height="15" alt="US" class="flag-icon"> English</a></li>
+              <li><a href="/vi/" {% if lang == 'vi' %}class="active"{% endif %}><img src="https://flagcdn.com/20x15/vn.png" width="20" height="15" alt="VN" class="flag-icon"> Tiếng Việt</a></li>
+              <li><a href="/ja/" {% if lang == 'ja' %}class="active"{% endif %}><img src="https://flagcdn.com/20x15/jp.png" width="20" height="15" alt="JP" class="flag-icon"> 日本語</a></li>
+              <li><a href="/ko/" {% if lang == 'ko' %}class="active"{% endif %}><img src="https://flagcdn.com/20x15/kr.png" width="20" height="15" alt="KR" class="flag-icon"> 한국어</a></li>
+              <li><a href="/tr/" {% if lang == 'tr' %}class="active"{% endif %}><img src="https://flagcdn.com/20x15/tr.png" width="20" height="15" alt="TR" class="flag-icon"> Türkçe</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container site-main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      {% if lang == 'en' %}
+        <p class="site-footer__brand">Dedicated IP · Private Node · 99.9% Uptime · AI & Streaming Accelerator</p>
+        <p class="site-footer__copy">© {{ site.time | date: '%Y' }} NasaVPN · <a href="https://www.nasavpn.com/">www.nasavpn.com</a></p>
+      {% elsif lang == 'vi' %}
+        <p class="site-footer__brand">IP riêng · Node riêng tư · Uptime 99.9% · Tăng tốc AI & Streaming</p>
+        <p class="site-footer__copy">© {{ site.time | date: '%Y' }} NasaVPN · <a href="https://www.nasavpn.com/vi/">www.nasavpn.com</a></p>
+      {% elsif lang == 'ja' %}
+        <p class="site-footer__brand">専用IP · プライベートノード · 稼働率99.9% · AI & ストリーミング加速</p>
+        <p class="site-footer__copy">© {{ site.time | date: '%Y' }} NasaVPN · <a href="https://www.nasavpn.com/ja/">www.nasavpn.com</a></p>
+      {% elsif lang == 'ko' %}
+        <p class="site-footer__brand">전용 IP · 프라이빗 노드 · 가동률 99.9% · AI & 스트리밍 가속</p>
+        <p class="site-footer__copy">© {{ site.time | date: '%Y' }} NasaVPN · <a href="https://www.nasavpn.com/ko/">www.nasavpn.com</a></p>
+      {% elsif lang == 'tr' %}
+        <p class="site-footer__brand">Özel IP · Özel Node · %99.9 Uptime · AI & Yayın Hızlandırıcı</p>
+        <p class="site-footer__copy">© {{ site.time | date: '%Y' }} NasaVPN · <a href="https://www.nasavpn.com/tr/">www.nasavpn.com</a></p>
+      {% else %}
+        <p class="site-footer__brand">专属 IP · 私有节点 · 99.9% 稳定在线 · AI 办公与流媒体全球加速</p>
+        <p class="site-footer__copy">© {{ site.time | date: '%Y' }} NasaVPN · <a href="https://www.nasavpn.com/zh/">www.nasavpn.com</a></p>
+      {% endif %}
+    </div>
+  </footer>
+</body>
+</html>

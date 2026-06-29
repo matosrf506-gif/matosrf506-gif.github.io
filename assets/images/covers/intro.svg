@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a3a"/>
+      <stop offset="100%" style="stop-color:#1a3a6e"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2b5cf0"/>
+      <stop offset="100%" style="stop-color:#5b8aff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Globe rings -->
+  <ellipse cx="950" cy="315" r="200" ry="200" fill="none" stroke="#2b5cf0" stroke-width="1.5" opacity="0.3"/>
+  <ellipse cx="950" cy="315" r="200" ry="100" fill="none" stroke="#2b5cf0" stroke-width="1" opacity="0.2"/>
+  <ellipse cx="950" cy="315" r="100" ry="200" fill="none" stroke="#2b5cf0" stroke-width="1" opacity="0.2"/>
+  <circle cx="950" cy="315" r="200" fill="none" stroke="#2b5cf0" stroke-width="2" opacity="0.4"/>
+  <line x1="750" y1="315" x2="1150" y2="315" stroke="#2b5cf0" stroke-width="1" opacity="0.25"/>
+  <line x1="950" y1="115" x2="950" y2="515" stroke="#2b5cf0" stroke-width="1" opacity="0.25"/>
+  <!-- Satellite dots -->
+  <circle cx="1100" cy="185" r="10" fill="url(#blue)"/>
+  <circle cx="820" cy="170" r="7" fill="#5b8aff" opacity="0.7"/>
+  <circle cx="1070" cy="450" r="7" fill="#5b8aff" opacity="0.7"/>
+  <!-- Logo large -->
+  <rect x="80" y="220" width="80" height="80" rx="18" fill="#2b5cf0"/>
+  <circle cx="120" cy="256" r="22" fill="none" stroke="#fff" stroke-width="3"/>
+  <circle cx="120" cy="256" r="8" fill="#fff"/>
+  <line x1="120" y1="234" x2="120" y2="224" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="120" y1="278" x2="120" y2="288" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="98" y1="256" x2="88" y2="256" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="142" y1="256" x2="152" y2="256" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <!-- Main text -->
+  <text x="180" y="268" font-family="Inter,sans-serif" font-size="56" font-weight="700" fill="#fff">NasaVPN</text>
+  <text x="180" y="306" font-family="Inter,sans-serif" font-size="18" fill="#93b4ff">专属 IP · 私有节点 · 全球 AI 加速器</text>
+  <!-- Features row -->
+  <text x="120" y="390" font-family="Inter,sans-serif" font-size="22" fill="#fff" font-weight="600">🔵 专属 IP，零污染零共享</text>
+  <text x="120" y="430" font-family="Inter,sans-serif" font-size="22" fill="#fff" font-weight="600">🟢 私有节点，99.9% 稳定在线</text>
+  <text x="120" y="470" font-family="Inter,sans-serif" font-size="22" fill="#fff" font-weight="600">🚀 AI 智能加速，ChatGPT / Claude 无障碍</text>
+  <text x="120" y="510" font-family="Inter,sans-serif" font-size="22" fill="#fff" font-weight="600">🎬 4K 流媒体，Netflix / Disney+ 全球畅看</text>
+  <rect x="80" y="548" width="300" height="42" rx="8" fill="#2b5cf0" opacity="0.3"/>
+  <text x="230" y="574" font-family="Inter,sans-serif" font-size="14" fill="#fff" text-anchor="middle">nasavpn.com</text>
+</svg>

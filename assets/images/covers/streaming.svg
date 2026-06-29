@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1830"/>
+      <stop offset="100%" style="stop-color:#181030"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Netflix red -->
+  <rect x="80" y="180" width="160" height="100" rx="12" fill="#e50914" opacity="0.8"/>
+  <text x="160" y="243" font-family="Arial,sans-serif" font-size="36" font-weight="900" fill="#fff" text-anchor="middle">N</text>
+  <!-- Disney+ blue -->
+  <rect x="280" y="180" width="160" height="100" rx="12" fill="#0063e5" opacity="0.8"/>
+  <text x="360" y="243" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">Disney+</text>
+  <!-- YouTube red -->
+  <rect x="480" y="180" width="160" height="100" rx="12" fill="#ff0000" opacity="0.8"/>
+  <text x="560" y="243" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">▶ YT</text>
+  <!-- NasaVPN shield -->
+  <rect x="700" y="160" width="140" height="140" rx="20" fill="#2b5cf0"/>
+  <text x="770" y="250" font-family="Inter,sans-serif" font-size="54" fill="#fff" text-anchor="middle">🛡</text>
+  <!-- Title -->
+  <text x="600" y="390" font-family="Inter,sans-serif" font-size="40" font-weight="700" fill="#fff" text-anchor="middle">Netflix · Disney+ · YouTube</text>
+  <text x="600" y="444" font-family="Inter,sans-serif" font-size="40" font-weight="700" fill="#fff" text-anchor="middle">全球流媒体 4K 加速方案</text>
+  <text x="600" y="500" font-family="Inter,sans-serif" font-size="18" fill="#93b4ff" text-anchor="middle">NasaVPN 专属 IP · 全球节点 · 无限速</text>
+  <rect x="430" y="535" width="340" height="42" rx="8" fill="#2b5cf0" opacity="0.25"/>
+  <text x="600" y="562" font-family="Inter,sans-serif" font-size="14" fill="#fff" text-anchor="middle">nasavpn.com</text>
+</svg>

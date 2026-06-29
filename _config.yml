@@ -1,0 +1,46 @@
+title: "NasaVPN Blog — Dedicated IP · AI Acceleration · Streaming"
+description: >-
+  NasaVPN official blog: Connect to ChatGPT, Claude, Netflix, YouTube instantly with a dedicated IP. Private nodes, 99.9% uptime, AI productivity, streaming, and global access guides.
+url: "https://matosrf506-gif.github.io"
+baseurl: ""
+lang: zh-CN
+
+author:
+  name: "NasaVPN"
+
+image: /assets/images/site-header.svg
+
+twitter:
+  card: summary_large_image
+
+social:
+  name: NasaVPN
+  links:
+    - https://www.nasavpn.com
+
+timezone: Asia/Shanghai
+permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      lang: zh
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page

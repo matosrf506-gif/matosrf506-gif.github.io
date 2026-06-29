@@ -1,0 +1,195 @@
+---
+layout: default
+---
+
+{% assign lang = page.lang | default: 'zh' %}
+{% assign lang_posts = site.posts | where: "lang", lang %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{ site.title }}",
+      "item": "{{ site.url }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ page.title | jsonify }},
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+  ]
+}
+</script>
+
+{% if page.faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in page.faq %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.a | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if page.howto %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": {{ page.howto.name | jsonify }},
+  "description": {{ page.howto.description | jsonify }},
+  "step": [
+    {% for step in page.howto.steps %}
+    {
+      "@type": "HowToStep",
+      "name": {{ step.name | jsonify }},
+      "text": {{ step.text | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if page.speakable_selector %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": {{ page.speakable_selector | jsonify }}
+  },
+  "url": "{{ site.url }}{{ page.url }}"
+}
+</script>
+{% endif %}
+
+<div class="post-layout">
+  <article class="post" itemscope itemtype="https://schema.org/Article">
+    {% if page.image %}
+    <div class="post__cover">
+      <img data-src="{{ page.image | relative_url }}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'/%3E" alt="{{ page.title }}" width="1200" height="630" itemprop="image">
+    </div>
+    {% endif %}
+
+    <header class="post__header">
+      <h1 class="post__title" itemprop="headline">{{ page.title }}</h1>
+      <div class="post__meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: '%Y-%m-%d' }}</time>{% if page.categories.size > 0 %} · {{ page.categories | join: ' / ' }}{% endif %}
+        <span itemprop="author" itemscope itemtype="https://schema.org/Organization">
+          <meta itemprop="name" content="{{ site.author.name }}">
+        </span>
+      </div>
+    </header>
+
+    <div class="post__content" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+    <footer class="post__footer">
+      {% if lang == 'en' %}
+        <a class="btn btn--primary" href="https://www.nasavpn.com/">🚀 Dedicated IP · Try NasaVPN Free</a>
+        <a class="btn btn--ghost" href="{{ '/en/' | relative_url }}">← Back to Home</a>
+      {% elsif lang == 'vi' %}
+        <a class="btn btn--primary" href="https://www.nasavpn.com/vi/">🚀 IP riêng · Dùng thử NasaVPN miễn phí</a>
+        <a class="btn btn--ghost" href="{{ '/vi/' | relative_url }}">← Trang Chủ</a>
+      {% elsif lang == 'ja' %}
+        <a class="btn btn--primary" href="https://www.nasavpn.com/ja/">🚀 専用IP · NasaVPNを無料で試す</a>
+        <a class="btn btn--ghost" href="{{ '/ja/' | relative_url }}">← ホームへ</a>
+      {% elsif lang == 'ko' %}
+        <a class="btn btn--primary" href="https://www.nasavpn.com/ko/">🚀 전용 IP · NasaVPN 무료 체험</a>
+        <a class="btn btn--ghost" href="{{ '/ko/' | relative_url }}">← 홈으로</a>
+      {% elsif lang == 'tr' %}
+        <a class="btn btn--primary" href="https://www.nasavpn.com/tr/">🚀 Özel IP · NasaVPN'i Ücretsiz Dene</a>
+        <a class="btn btn--ghost" href="{{ '/tr/' | relative_url }}">← Ana Sayfa</a>
+      {% else %}
+        <a class="btn btn--primary" href="https://www.nasavpn.com/zh/">🚀 专属 IP · 立即免费试用 NasaVPN</a>
+        <a class="btn btn--ghost" href="{{ '/' | relative_url }}">← 返回首页</a>
+      {% endif %}
+    </footer>
+  </article>
+
+  <aside class="sidebar">
+    <div class="sidebar__section">
+      <h3 class="sidebar__title">
+        {% case lang %}
+          {% when 'en' %}Recommended
+          {% when 'vi' %}Bài viết đề xuất
+          {% when 'ja' %}おすすめ記事
+          {% when 'ko' %}추천 글
+          {% when 'tr' %}Önerilen Yazılar
+          {% else %}推荐阅读
+        {% endcase %}
+      </h3>
+      <ul class="sidebar__list">
+        {% assign count = 0 %}
+        {% for post in lang_posts %}
+          {% if post.url != page.url and count < 5 %}
+            <li class="sidebar__item">
+              <a class="sidebar__link" href="{{ post.url | relative_url }}">
+                {% if post.image %}
+                <img class="sidebar__thumb" data-src="{{ post.image | relative_url }}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 210'/%3E" alt="{{ post.title }}" width="400" height="210">
+                {% endif %}
+                <div class="sidebar__text">
+                  <span class="sidebar__link-title">{{ post.title }}</span>
+                  <time class="sidebar__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+                </div>
+              </a>
+            </li>
+            {% assign count = count | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="sidebar__section sidebar__cta">
+      <h3 class="sidebar__title">
+        {% case lang %}
+          {% when 'en' %}Try NasaVPN Free
+          {% when 'vi' %}Dùng thử miễn phí
+          {% when 'ja' %}無料で試す
+          {% when 'ko' %}무료 체험
+          {% when 'tr' %}Ücretsiz Deneyin
+          {% else %}免费试用 NasaVPN
+        {% endcase %}
+      </h3>
+      <p class="sidebar__cta-text">
+        {% case lang %}
+          {% when 'en' %}Dedicated IP · Private node · 99.9% uptime guarantee.
+          {% when 'vi' %}IP riêng · Node riêng tư · Cam kết uptime 99.9%.
+          {% when 'ja' %}専用IP · プライベートノード · 稼働率99.9%保証。
+          {% when 'ko' %}전용 IP · 프라이빗 노드 · 99.9% 가동률 보장.
+          {% when 'tr' %}Özel IP · Özel node · %99.9 uptime garantisi.
+          {% else %}专属 IP · 私有节点 · 99.9% 稳定在线保障。
+        {% endcase %}
+      </p>
+      <a class="btn btn--primary sidebar__cta-btn" href="https://www.nasavpn.com/{% if lang != 'zh' %}{{ lang }}/{% else %}zh/{% endif %}">
+        {% case lang %}
+          {% when 'en' %}Get Started Free →
+          {% when 'vi' %}Bắt đầu miễn phí →
+          {% when 'ja' %}無料で始める →
+          {% when 'ko' %}무료로 시작하기 →
+          {% when 'tr' %}Ücretsiz Başla →
+          {% else %}免费开始使用 →
+        {% endcase %}
+      </a>
+    </div>
+  </aside>
+</div>

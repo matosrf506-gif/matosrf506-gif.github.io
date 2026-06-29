@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a3a"/>
+      <stop offset="100%" style="stop-color:#0f2d5e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="950" cy="315" r="240" fill="#2b5cf0" opacity="0.08"/>
+  <circle cx="950" cy="315" r="160" fill="#2b5cf0" opacity="0.08"/>
+  <!-- ChatGPT logo placeholder -->
+  <circle cx="260" cy="280" r="90" fill="#10a37f" opacity="0.15" stroke="#10a37f" stroke-width="2"/>
+  <text x="260" y="250" font-family="Inter,sans-serif" font-size="48" font-weight="700" fill="#10a37f" text-anchor="middle" opacity="0.8">GPT</text>
+  <text x="260" y="300" font-family="Inter,sans-serif" font-size="18" fill="#10a37f" text-anchor="middle" opacity="0.6">ChatGPT</text>
+  <!-- Arrow -->
+  <line x1="380" y1="280" x2="480" y2="280" stroke="#2b5cf0" stroke-width="3" stroke-dasharray="8,4"/>
+  <polygon points="480,270 500,280 480,290" fill="#2b5cf0"/>
+  <!-- NasaVPN shield -->
+  <rect x="520" y="220" width="120" height="120" rx="16" fill="#2b5cf0" opacity="0.9"/>
+  <text x="580" y="295" font-family="Inter,sans-serif" font-size="40" fill="#fff" text-anchor="middle">🛡</text>
+  <!-- Main title -->
+  <text x="600" y="430" font-family="Inter,sans-serif" font-size="44" font-weight="700" fill="#fff" text-anchor="middle">ChatGPT 连不上？</text>
+  <text x="600" y="486" font-family="Inter,sans-serif" font-size="44" font-weight="700" fill="#fff" text-anchor="middle">NasaVPN 专属 IP 一键直连</text>
+  <text x="600" y="540" font-family="Inter,sans-serif" font-size="18" fill="#93b4ff" text-anchor="middle">Dedicated IP · 无风控 · 99.9% 稳定在线</text>
+  <rect x="420" y="560" width="360" height="44" rx="8" fill="#2b5cf0" opacity="0.2"/>
+  <text x="600" y="588" font-family="Inter,sans-serif" font-size="14" fill="#fff" text-anchor="middle">nasavpn.com</text>
+</svg>
