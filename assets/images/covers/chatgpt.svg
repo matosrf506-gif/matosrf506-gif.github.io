@@ -21,7 +21,7 @@
   <!-- Main title -->
   <text x="600" y="430" font-family="Inter,sans-serif" font-size="44" font-weight="700" fill="#fff" text-anchor="middle">ChatGPT 连不上？</text>
   <text x="600" y="486" font-family="Inter,sans-serif" font-size="44" font-weight="700" fill="#fff" text-anchor="middle">NasaVPN 专属 IP 一键直连</text>
-  <text x="600" y="540" font-family="Inter,sans-serif" font-size="18" fill="#93b4ff" text-anchor="middle">Dedicated IP · 稳定接入 · 99.9% 在线保障</text>
+  <text x="600" y="540" font-family="Inter,sans-serif" font-size="18" fill="#93b4ff" text-anchor="middle">Dedicated IP · 稳定直连 · 99.9% 稳定在线</text>
   <rect x="420" y="560" width="360" height="44" rx="8" fill="#2b5cf0" opacity="0.2"/>
   <text x="600" y="588" font-family="Inter,sans-serif" font-size="14" fill="#fff" text-anchor="middle">nasavpn.com</text>
 </svg>
