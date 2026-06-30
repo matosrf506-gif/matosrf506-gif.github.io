@@ -17,7 +17,7 @@
   <text x="350" y="276" font-family="Inter,sans-serif" font-size="14" fill="#fff" text-anchor="middle">用户C</text>
   <text x="270" y="330" font-family="Inter,sans-serif" font-size="30" fill="#e53e3e" text-anchor="middle">↓</text>
   <rect x="160" y="350" width="220" height="32" rx="8" fill="#e53e3e" opacity="0.2"/>
-  <text x="270" y="371" font-family="Inter,sans-serif" font-size="14" fill="#e53e3e" text-anchor="middle">同一出口 IP · 易被风控</text>
+  <text x="270" y="371" font-family="Inter,sans-serif" font-size="14" fill="#e53e3e" text-anchor="middle">同一出口 IP · 易被识别限速</text>
   <!-- Dedicated IP (good - green) -->
   <rect x="740" y="160" width="380" height="240" rx="16" fill="#0a1f0a" stroke="#34d399" stroke-width="1.5" opacity="0.9"/>
   <text x="930" y="205" font-family="Inter,sans-serif" font-size="18" fill="#34d399" text-anchor="middle" font-weight="600">专属 IP（NasaVPN）</text>
@@ -25,12 +25,12 @@
   <text x="930" y="276" font-family="Inter,sans-serif" font-size="14" fill="#fff" text-anchor="middle">仅你</text>
   <text x="930" y="330" font-family="Inter,sans-serif" font-size="30" fill="#34d399" text-anchor="middle">↓</text>
   <rect x="810" y="350" width="240" height="32" rx="8" fill="#34d399" opacity="0.15"/>
-  <text x="930" y="371" font-family="Inter,sans-serif" font-size="14" fill="#34d399" text-anchor="middle">独享 IP · 零风控 · 稳定可信</text>
+  <text x="930" y="371" font-family="Inter,sans-serif" font-size="14" fill="#34d399" text-anchor="middle">独享 IP · 稳定接入 · 零干扰</text>
   <!-- VS in middle -->
   <text x="600" y="300" font-family="Inter,sans-serif" font-size="40" font-weight="900" fill="#fff" text-anchor="middle" opacity="0.5">VS</text>
   <!-- Title -->
   <text x="600" y="460" font-family="Inter,sans-serif" font-size="40" font-weight="700" fill="#fff" text-anchor="middle">为什么 AI 账号需要专属 IP？</text>
-  <text x="600" y="510" font-family="Inter,sans-serif" font-size="18" fill="#93b4ff" text-anchor="middle">NasaVPN 专属 IP · 一人一 IP · 告别验证码与封号</text>
+  <text x="600" y="510" font-family="Inter,sans-serif" font-size="18" fill="#93b4ff" text-anchor="middle">NasaVPN 专属 IP · 一人一 IP · 告别频繁验证码</text>
   <rect x="430" y="548" width="340" height="42" rx="8" fill="#2b5cf0" opacity="0.2"/>
   <text x="600" y="574" font-family="Inter,sans-serif" font-size="14" fill="#fff" text-anchor="middle">nasavpn.com</text>
 </svg>
