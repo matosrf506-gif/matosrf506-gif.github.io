@@ -1,11 +1,12 @@
 ---
 layout: page
-title: "关于 NasaVPN"
+title: 关于 NasaVPN
 description: "NasaVPN 是专为 AI 用户和流媒体爱好者设计的全球网络加速器，提供专属 IP 和私有节点服务。"
 lang: zh
+permalink: /zh/about/
+redirect_from:
+  - /about/
 ---
-
-## 关于 NasaVPN
 
 **NasaVPN** 是一款专为 AI 生产力用户和流媒体爱好者打造的全球网络加速器，核心理念是：**一人一 IP，私有节点，99.9% 稳定在线**。
 
