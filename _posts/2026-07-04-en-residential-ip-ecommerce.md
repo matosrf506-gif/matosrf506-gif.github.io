@@ -1,6 +1,7 @@
 ---
 title: "NasaVPN for Cross-Border Business — Residential IP Guide"
 date: 2026-07-04 10:00:00 +0800
+permalink: /:year/:month/:day/:title/
 categories: [E-Commerce]
 tags: [NasaVPN, residential IP, cross-border, Amazon, Facebook ads]
 lang: en

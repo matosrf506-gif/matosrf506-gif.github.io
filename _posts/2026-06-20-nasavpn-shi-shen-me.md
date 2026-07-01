@@ -1,6 +1,8 @@
 ---
 title: "NasaVPN 是什么？跨境专用网络加速器 — 原生住宅 IP · 全球纯净节点"
 date: 2026-06-20 10:00:00 +0800
+redirect_from:
+  - /2026/06/20/nasavpn-shi-shen-me/
 categories: [产品介绍]
 tags: [NasaVPN, 跨境加速, 原生住宅IP, 全球纯净节点, 出海工具, 网络加速器]
 excerpt: "独享固定原生住宅 IP，出海业务稳稳直连。NasaVPN 是面向跨境从业者和 AI 用户的专用网络加速器——全球纯净节点，全平台覆盖，99.9% 在线。"

@@ -1,6 +1,8 @@
 ---
 title: "TikTok 出海运营：原生 IP 让账号流量更真实"
 date: 2026-07-03 10:00:00 +0800
+redirect_from:
+  - /2026/07/03/tiktok-chuhai-yuansheng-ip/
 categories: [跨境营销]
 tags: [TikTok出海, 跨境营销, 原生IP, NasaVPN, 内容运营]
 lang: zh

@@ -1,6 +1,7 @@
 ---
 title: "Tại Sao ChatGPT Cần IP Riêng? NasaVPN Giải Thích Từ Gốc Rễ"
 date: 2026-06-29 10:00:00 +0800
+permalink: /:year/:month/:day/:title/
 categories: [Công Cụ AI]
 tags: [ChatGPT, IP riêng, NasaVPN, IP dân cư, tăng tốc AI]
 lang: vi

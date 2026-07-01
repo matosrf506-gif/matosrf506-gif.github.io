@@ -1,6 +1,8 @@
 ---
 title: "Facebook / Meta 广告账号被限制？住宅 IP 是解法"
 date: 2026-07-02 10:00:00 +0800
+redirect_from:
+  - /2026/07/02/facebook-guanggao-zhanghu-baohu/
 categories: [跨境营销]
 tags: [Facebook广告, Meta账号, 住宅IP, 广告账号, NasaVPN]
 lang: zh

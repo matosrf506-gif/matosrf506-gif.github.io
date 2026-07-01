@@ -1,6 +1,8 @@
 ---
 title: "跨境电商账号防关联：原生住宅 IP 完全指南"
 date: 2026-07-01 10:00:00 +0800
+redirect_from:
+  - /2026/07/01/kuajing-dianshang-zhanghu-fangguanlian/
 categories: [跨境电商]
 tags: [跨境电商, 账号防关联, 住宅IP, Amazon, eBay, NasaVPN]
 lang: zh

@@ -3,7 +3,7 @@ description: >-
   NasaVPN 官方博客：跨境专用网络加速器，独享固定原生住宅IP，出海业务稳稳直连。面向出海从业者、跨境电商、AI工具用户的跨境网络实用指南。
 url: "https://matosrf506-gif.github.io"
 baseurl: ""
-lang: zh-CN
+lang: en
 
 author:
   name: "NasaVPN"
@@ -25,6 +25,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 exclude:
   - Gemfile
@@ -39,6 +40,7 @@ defaults:
     values:
       layout: post
       lang: zh
+      permalink: /zh/:year/:month/:day/:title/
   - scope:
       path: ""
       type: pages
